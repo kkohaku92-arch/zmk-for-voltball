@@ -10,6 +10,13 @@
     chosen {
         zmk,kscan = &kscan0;
         zmk,physical-layout = &voltball_layout;
+        zmk,battery = &non_lipo_battery;
+    };
+
+    non_lipo_battery: non_lipo_battery {
+        compatible = "zmk,non-lipo-battery";
+        /* P0.31/AIN7 reads half the AA voltage through the 1M/1M divider. */
+        io-channels = <&adc 7>;
     };
 
     default_transform: keymap_transform_0 {
@@ -104,4 +111,8 @@
         input-processors = <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
                        <&zip_temp_layer 3 500>;
     };
+};
+
+&vbatt {
+    status = "disabled";
 };

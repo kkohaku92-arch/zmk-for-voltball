@@ -22,6 +22,9 @@ manifest:
     - name: zmk-feature-status-led
       remote: sekigon-gonnoc
       revision: main
+    - name: zmk-feature-non-lipo-battery-management
+      remote: sekigon-gonnoc
+      revision: main
     - name: zmk-driver-paw3222
       remote: sekigon-gonnoc
       revision: main
